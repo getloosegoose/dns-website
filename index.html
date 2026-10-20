@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How a familiar website name becomes an address computers can use.">
+    <title>Understanding DNS | Understanding DNS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <!-- The same header and navigation appear on all six pages. -->
+    <header>
+        <div class="brand"><a href="index.html">Understanding <span>DNS</span></a><span class="course">IT 3203 · FALL 2026</span></div>
+        <nav aria-label="Main navigation"><ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="dns-basics.html">DNS Basics</a></li>
+        <li><a href="dns-security.html">Security &amp; Privacy</a></li>
+        <li><a href="key-concepts.html">Key Concepts</a></li>
+        <li><a href="references.html">Resources</a></li>
+        <li><a href="about.html">About Me</a></li>
+        </ul></nav>
+    </header>
+    <main id="main-content">
+        <div class="page-heading"><p class="eyebrow">A beginner's guide to the Domain Name System</p>
+        <h1>Understanding DNS</h1><p class="lead">How a familiar website name becomes an address computers can use.</p></div>
+
+        <!-- Flexbox places the introduction beside the original diagram. -->
+        <section class="hero">
+            <div><h2>How DNS helps you find a website</h2>
+            <p>The Domain Name System, or DNS, helps your device find the IP address for a website name. You can type a name like example.com instead of remembering a server's numeric address.</p>
+            <p>DNS also helps with email and other Internet services. Its information is spread across many servers, with different organizations managing different parts.</p>
+            <a class="button" href="dns-basics.html">Follow a DNS lookup →</a></div>
+            <figure><img src="images/name-to-address.svg" width="640" height="340" alt="A website name is looked up through DNS to find an IP address, then the browser connects to the website."><figcaption>A name lookup happens before the website connection.</figcaption></figure>
+        </section>
+        <section><h2>Why DNS matters</h2><p>A website can keep the same name even if its IP address changes. The administrator updates its DNS records, so visitors can keep using the name they already know.</p><p class="sources">Read more: <a href="references.html#icann">ICANN: About Domain Names</a> · <a href="references.html#overview">Cloudflare: What is DNS?</a></p></section>
+        <section><h2>Terms to know</h2><dl class="terms">
+            <dt>Domain name</dt><dd>A name such as <code>example.com</code>.</dd>
+            <dt>IP address</dt><dd>A numeric address used to communicate on an IP network.</dd>
+            <dt>Resolver</dt><dd>A service that finds DNS answers for a client.</dd>
+            <dt>DNS record</dt><dd>A stored piece of information associated with a name.</dd>
+        </dl></section>
+        <section id="contents"><h2>Explore the website</h2><div class="cards">
+            <article class="card"><span class="number">01</span><h3><a href="dns-basics.html">DNS Basics</a></h3><p>Follow a lookup and compare common record types.</p></article>
+            <article class="card"><span class="number">02</span><h3><a href="dns-security.html">Security &amp; Privacy</a></h3><p>Understand false answers, validation, and encryption.</p></article>
+            <article class="card"><span class="number">03</span><h3><a href="key-concepts.html">Key Concepts</a></h3><p>Review seven ideas with practical examples.</p></article>
+            <article class="card"><span class="number">04</span><h3><a href="references.html">References &amp; Resources</a></h3><p>Explore standards and beginner learning materials.</p></article>
+            <article class="card"><span class="number">05</span><h3><a href="about.html">About Me</a></h3><p>Learn about me and my goals for this class project.</p></article>
+        </div></section>
+    </main>
+    <!-- Course credit. -->
+    <footer><p>Ben Rios Lopez · Kennesaw State University · Fall 2026</p>
+    <p>An <a href="https://ksuweb.github.io/IT3203/">IT 3203 class project</a>.</p></footer>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="340" viewBox="0 0 640 340">
+<title>From website name to network address</title><desc>DNS finds an address for a name. The browser then connects to the website.</desc>
+<rect width="640" height="340" rx="12" fill="#edf4fa"/>
+<g font-family="Arial, sans-serif" text-anchor="middle">
+<text x="320" y="40" font-size="14" fill="#346472">A NAME IS THE STARTING POINT</text>
+<rect x="70" y="65" width="500" height="65" rx="8" fill="white" stroke="#b4cbdc"/>
+<text x="320" y="106" font-size="26" fill="#102c4e">www.example.com</text>
+<path d="M320 135 V163 M312 155 L320 163 L328 155" fill="none" stroke="#28737b" stroke-width="3"/>
+<rect x="235" y="172" width="170" height="52" rx="26" fill="#102c4e"/><text x="320" y="205" font-size="20" fill="white">DNS lookup</text>
+<path d="M320 230 V255 M312 247 L320 255 L328 247" fill="none" stroke="#28737b" stroke-width="3"/>
+<text x="320" y="286" font-size="24" fill="#102c4e">192.0.2.10</text>
+<text x="320" y="316" font-size="14" fill="#52637a">Illustrative address → connect to the website</text></g></svg>

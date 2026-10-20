@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how DNS answers can be attacked and how security tools help.">
+    <title>DNS Security &amp; Privacy | Understanding DNS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <!-- The same header and navigation appear on all six pages. -->
+    <header>
+        <div class="brand"><a href="index.html">Understanding <span>DNS</span></a><span class="course">IT 3203 · FALL 2026</span></div>
+        <nav aria-label="Main navigation"><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dns-basics.html">DNS Basics</a></li>
+        <li><a href="dns-security.html" aria-current="page">Security &amp; Privacy</a></li>
+        <li><a href="key-concepts.html">Key Concepts</a></li>
+        <li><a href="references.html">Resources</a></li>
+        <li><a href="about.html">About Me</a></li>
+        </ul></nav>
+    </header>
+    <main id="main-content">
+        <div class="page-heading"><p class="eyebrow">A beginner's guide to the Domain Name System</p>
+        <h1>DNS Security &amp; Privacy</h1><p class="lead">Learn how DNS answers can be attacked and how security tools help.</p></div>
+
+        <section><h2>Three ways DNS can be attacked</h2>
+        <div class="cards"><article class="card"><h3>DNS spoofing</h3><p>An attacker sends a fake DNS answer that points a name to the wrong address. This could send someone to a fake website.</p></article>
+        <article class="card"><h3>Cache poisoning</h3><p>A resolver stores a false answer in its cache. Other people who ask the same question may get that answer until it expires or is removed.</p></article>
+        <article class="card"><h3>DNS hijacking</h3><p>An attacker changes DNS settings or records. For example, someone who gets into a router or domain account could change where DNS requests or website traffic go.</p></article></div><p class="sources">Read more: <a href="references.html#poisoning">Cloudflare: DNS cache poisoning</a></p></section>
+        <section><h2>DNSSEC: checking the data</h2><p>DNS Security Extensions, called DNSSEC, use digital signatures to help check DNS answers. A validating resolver follows a chain of trust to check where signed data came from and whether it was changed. DNSSEC can also check signed answers saying that a name or record does not exist.</p><p>DNSSEC does not hide your DNS questions or guarantee that a website is safe. It needs correct signing and validation to work. Unsigned data does not get the same protection.</p><p class="sources">Read more: <a href="references.html#rfc4033">RFC 4033</a></p></section>
+        <section><h2>DoH and DoT: protecting the connection</h2><div class="table-wrap"><table>
+        <caption>Data validation and transport encryption solve different problems</caption><thead><tr><th scope="col">Technology</th><th scope="col">Main protection</th><th scope="col">Important limit</th></tr></thead><tbody>
+        <tr><th scope="row">DNSSEC</th><td>Checks the authenticity and integrity of signed DNS data.</td><td>Does not hide the question.</td></tr>
+        <tr><th scope="row">DNS over HTTPS (DoH)</th><td>Carries DNS messages over HTTPS.</td><td>The chosen resolver can still see the query.</td></tr>
+        <tr><th scope="row">DNS over TLS (DoT)</th><td>Uses TLS to protect DNS transport, normally on port 853.</td><td>Protects that connection, not every later DNS hop.</td></tr>
+        </tbody></table></div><p>DoH and DoT can reduce eavesdropping and tampering between a client and its resolver. They do not automatically provide DNSSEC validation or make browsing anonymous. A resolver's logging policies still matter.</p><p class="sources">Read more: <a href="references.html#rfc7858">RFC 7858</a> · <a href="references.html#rfc8484">RFC 8484</a></p></section>
+        <section><h2>Practical habits</h2><ul>
+        <li>Keep routers, operating systems, and DNS software updated.</li>
+        <li>Protect domain-management accounts with strong passwords and multifactor authentication.</li>
+        <li>Use a trustworthy resolver and review its privacy policy.</li>
+        <li>Use encrypted DNS where supported and allowed by your network's policies.</li>
+        <li>For domains you manage, coordinate DNSSEC setup with your DNS provider and registrar.</li>
+        <li>Pay attention to HTTPS certificate warnings even when DNS appears to work.</li>
+        </ul></section><p class="next"><a href="key-concepts.html">Next: seven key concepts →</a></p>
+    </main>
+    <!-- Course credit. -->
+    <footer><p>Ben Rios Lopez · Kennesaw State University · Fall 2026</p>
+    <p>An <a href="https://ksuweb.github.io/IT3203/">IT 3203 class project</a>.</p></footer>
+</body>
+</html>

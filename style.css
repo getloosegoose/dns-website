@@ -1,0 +1,76 @@
+/* Shared stylesheet: element selectors set the basic page appearance. */
+* { box-sizing: border-box; }
+body { margin: 0; background: #f4f6f9; color: #23344b; font-family: Arial, Helvetica, sans-serif; line-height: 1.65; }
+a { color: #14539a; text-underline-offset: 4px; }
+a:hover { color: #083263; text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid #d88616; outline-offset: 4px; }
+header { background: #102c4e; color: white; }
+.brand { max-width: 1120px; margin: auto; padding: 24px 28px; display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+.brand a { color: white; text-decoration: none; font-size: 24px; font-weight: bold; }
+.brand span:not(.course) { color: #8edddc; }
+.course { font-size: 12px; letter-spacing: 2px; color: #c8d8eb; }
+nav { border-top: 1px solid #36516f; }
+nav ul { list-style: none; display: flex; flex-wrap: wrap; max-width: 1120px; margin: auto; padding: 0 16px; }
+nav a { display: block; padding: 14px 12px; color: #e8eff8; text-decoration: none; font-size: 14px; }
+nav a:hover, nav a[aria-current="page"] { background: #21466f; color: white; box-shadow: inset 0 -3px #8edddc; }
+/* ID selector limits the width of the main reading area. */
+#main-content { max-width: 1120px; margin: auto; padding: 44px 28px 60px; }
+.page-heading { margin-bottom: 32px; }
+.eyebrow { color: #346472; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px; }
+h1 { color: #102c4e; font-size: 42px; line-height: 1.15; margin: 12px 0 16px; }
+h2 { color: #102c4e; font-size: 25px; line-height: 1.3; margin-top: 0; }
+h3 { color: #102c4e; font-size: 19px; }
+p { margin: 0 0 16px; }
+.lead { font-size: 19px; color: #52637a; }
+section { margin-bottom: 30px; padding: 28px; background: white; border: 1px solid #dae2ec; border-radius: 8px; }
+/* Class selectors and Flexbox make simple reusable layouts. */
+.hero { display: flex; align-items: center; gap: 24px; }
+.hero > div, .hero > figure { flex: 1; min-width: 0; }
+.hero h2 { font-size: 32px; }
+figure { margin: 0; }
+img { display: block; width: 100%; height: auto; }
+figcaption { color: #52637a; font-size: 13px; margin-top: 12px; }
+.diagram { margin: 24px 0; }
+.button { display: inline-block; background: #14539a; color: white; padding: 12px 18px; border-radius: 4px; text-decoration: none; }
+.button:hover { background: #102c4e; color: white; }
+.cards { display: flex; flex-wrap: wrap; gap: 16px; }
+.card { flex: 1 1 230px; padding: 20px; background: #f4f7fa; border: 1px solid #dce4ee; border-radius: 5px; }
+.card h3 { margin: 8px 0; }
+.card p { margin-bottom: 0; }
+.number { color: #28737b; font-size: 14px; font-weight: bold; letter-spacing: 2px; }
+.terms dt { font-weight: bold; color: #102c4e; margin-top: 16px; }
+.terms dd { margin-left: 0; }
+li { margin-bottom: 10px; }
+nav li { margin: 0; }
+.steps li { padding-left: 8px; margin-bottom: 15px; }
+code { background: #edf2f7; padding: 2px 5px; font-size: 0.95em; overflow-wrap: anywhere; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+caption { text-align: left; color: #52637a; padding-bottom: 12px; font-size: 14px; }
+th, td { padding: 14px; border: 1px solid #d5dfeb; vertical-align: top; }
+thead { background: #102c4e; color: white; }
+tbody tr:nth-child(even) { background: #f1f5f9; }
+.note { background: #eaf4f4; border-left: 4px solid #28737b; padding: 24px; margin: 28px 0; }
+.note h2 { font-size: 21px; }
+.sources { font-size: 13px; margin: 20px 0 0; }
+.concept { display: flex; gap: 22px; }
+.example { border-left: 3px solid #b4cbdc; padding-left: 16px; margin-bottom: 0; }
+.reference-list li { padding: 10px 0; }
+.reference-list p { margin: 4px 0 0; }
+.next { text-align: right; font-weight: bold; }
+footer { background: #102c4e; color: #dae5f2; padding: 30px 24px; text-align: center; font-size: 13px; }
+footer p { margin: 5px 0; }
+footer a { color: #b6eceb; }
+footer a:hover { color: white; }
+.skip-link { position: absolute; left: 12px; top: -100px; padding: 10px; background: white; z-index: 2; }
+.skip-link:focus { top: 8px; }
+/* A small screen adjustment keeps the basic layout readable. */
+@media (max-width: 700px) {
+    #main-content { padding: 28px 16px; }
+    h1 { font-size: 32px; }
+    section { padding: 20px; }
+    .hero { flex-direction: column; align-items: stretch; }
+    .hero h2 { font-size: 27px; }
+    .concept { gap: 12px; }
+    th, td { padding: 9px; }
+}

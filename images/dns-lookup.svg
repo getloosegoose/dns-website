@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
+<title>A simplified DNS lookup</title><desc>The client asks the resolver. The resolver contacts root, TLD, and authoritative servers, then returns the answer.</desc>
+<rect width="900" height="420" rx="12" fill="#edf4fa"/>
+<g font-family="Arial, sans-serif" text-anchor="middle" fill="#102c4e">
+<rect x="25" y="170" width="150" height="80" rx="8" fill="white" stroke="#b4cbdc"/><text x="100" y="207" font-size="22">Your device</text><text x="100" y="231" font-size="14">Client</text>
+<rect x="295" y="170" width="200" height="80" rx="8" fill="#102c4e"/><text x="395" y="206" font-size="22" fill="white">Recursive</text><text x="395" y="233" font-size="22" fill="white">resolver</text>
+<rect x="680" y="30" width="195" height="75" rx="8" fill="white" stroke="#b4cbdc"/><text x="777" y="62" font-size="21">Root server</text><text x="777" y="86" font-size="14">Referral to .com</text>
+<rect x="680" y="172" width="195" height="75" rx="8" fill="white" stroke="#b4cbdc"/><text x="777" y="204" font-size="21">.com TLD server</text><text x="777" y="228" font-size="14">Referral to domain</text>
+<rect x="680" y="314" width="195" height="75" rx="8" fill="white" stroke="#b4cbdc"/><text x="777" y="347" font-size="21">Authoritative</text><text x="777" y="371" font-size="14">Requested record</text>
+<g fill="none" stroke="#28737b" stroke-width="3"><path d="M180 190 H287 M279 183 L287 190 L279 197"/><path d="M287 232 H180 M188 225 L180 232 L188 239"/><path d="M500 185 L665 70 M652 71 L665 70 L662 83"/><path d="M500 210 H665 M657 203 L665 210 L657 217"/><path d="M500 235 L665 350 M652 349 L665 350 L662 337"/></g>
+<text x="232" y="175" font-size="14">1. Query</text><text x="231" y="273" font-size="14">5. Answer</text>
+<text x="545" y="86" font-size="15">2. Ask root</text><text x="583" y="197" font-size="15">3. Ask TLD</text><text x="551" y="333" font-size="15">4. Ask authority</text>
+<text x="320" y="383" font-size="14">Each server replies to the resolver. Cached answers can skip steps.</text></g></svg>

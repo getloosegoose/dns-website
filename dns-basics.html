@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn what happens during a DNS lookup and what the main records do.">
+    <title>DNS Basics | Understanding DNS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <!-- The same header and navigation appear on all six pages. -->
+    <header>
+        <div class="brand"><a href="index.html">Understanding <span>DNS</span></a><span class="course">IT 3203 · FALL 2026</span></div>
+        <nav aria-label="Main navigation"><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dns-basics.html" aria-current="page">DNS Basics</a></li>
+        <li><a href="dns-security.html">Security &amp; Privacy</a></li>
+        <li><a href="key-concepts.html">Key Concepts</a></li>
+        <li><a href="references.html">Resources</a></li>
+        <li><a href="about.html">About Me</a></li>
+        </ul></nav>
+    </header>
+    <main id="main-content">
+        <div class="page-heading"><p class="eyebrow">A beginner's guide to the Domain Name System</p>
+        <h1>DNS Basics</h1><p class="lead">Learn what happens during a DNS lookup and what the main records do.</p></div>
+
+        <section><h2>What happens when you enter a name?</h2><p>Your device sends its DNS question to a recursive resolver. This service looks for the answer for you. It first checks whether it has a saved answer it can still use. If it does not, it can ask other name servers.</p>
+        <ol class="steps">
+            <li><strong>Ask the resolver.</strong> The client requests a record, such as the A record for <code>www.example.com</code>.</li>
+            <li><strong>Start at the root.</strong> A root server refers the resolver to servers for the relevant top-level domain, such as <code>.com</code>.</li>
+            <li><strong>Ask the TLD server.</strong> It provides a referral to authoritative servers for the domain.</li>
+            <li><strong>Ask an authoritative server.</strong> This server publishes records for its zone and can return the requested data.</li>
+            <li><strong>Return the result.</strong> The resolver answers the client and can cache records for later requests.</li>
+        </ol>
+        <figure class="diagram"><img src="images/dns-lookup.svg" width="900" height="420" alt="Client asks a recursive resolver. On a cache miss the resolver asks root, TLD, and authoritative servers in order; referrals lead it to an answer returned to the client."><figcaption>Simplified lookup with an empty cache. The resolver contacts each server; root and TLD servers return referrals.</figcaption></figure><p class="sources">Read more: <a href="references.html#rfc1034">RFC 1034</a> · <a href="references.html#overview">Cloudflare DNS overview</a></p></section>
+        <section><h2>Queries and responses</h2><p>A DNS query is a question about a name and a record type. The reply may give an answer, point to another server, or report an error. A records give IPv4 addresses, while AAAA records give IPv6 addresses. Once the browser has an address, it can connect to the web server. DNS finds the address; it does not download the webpage.</p></section>
+        <section><h2>Common DNS records</h2><div class="table-wrap"><table>
+        <caption>Record types and illustrative values (not live DNS results)</caption>
+        <thead><tr><th scope="col">Type</th><th scope="col">Purpose</th><th scope="col">Example value</th></tr></thead>
+        <tbody>
+            <tr><th scope="row">A</th><td>Maps a name to an IPv4 address.</td><td><code>192.0.2.10</code></td></tr>
+            <tr><th scope="row">AAAA</th><td>Maps a name to an IPv6 address.</td><td><code>2001:db8::10</code></td></tr>
+            <tr><th scope="row">CNAME</th><td>Makes one name an alias of another name.</td><td><code>www.example.com → example.com</code></td></tr>
+            <tr><th scope="row">MX</th><td>Identifies a mail server with a preference value; lower values are preferred.</td><td><code>10 mail.example.com</code></td></tr>
+            <tr><th scope="row">NS</th><td>Names an authoritative name server.</td><td><code>ns1.example.com</code></td></tr>
+            <tr><th scope="row">TXT</th><td>Stores text, often used by verification and email policies.</td><td><code>site-verification=sample</code></td></tr>
+        </tbody></table></div><p class="sources">Read more: <a href="references.html#rfc1035">RFC 1035</a> · <a href="references.html#rfc3596">RFC 3596</a></p></section>
+        <aside class="note"><h2>A practical example</h2><p>When you visit <code>www.ksu.edu</code>, your device needs to resolve that hostname. It may receive IPv4 addresses, IPv6 addresses, or an alias that requires another lookup. Answers can change, so this example intentionally does not claim a current KSU IP address.</p></aside>
+        <p class="next"><a href="dns-security.html">Next: protecting DNS →</a></p>
+    </main>
+    <!-- Course credit. -->
+    <footer><p>Ben Rios Lopez · Kennesaw State University · Fall 2026</p>
+    <p>An <a href="https://ksuweb.github.io/IT3203/">IT 3203 class project</a>.</p></footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Seven DNS ideas with examples to help explain them.">
+    <title>Seven Key Concepts | Understanding DNS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <!-- The same header and navigation appear on all six pages. -->
+    <header>
+        <div class="brand"><a href="index.html">Understanding <span>DNS</span></a><span class="course">IT 3203 · FALL 2026</span></div>
+        <nav aria-label="Main navigation"><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dns-basics.html">DNS Basics</a></li>
+        <li><a href="dns-security.html">Security &amp; Privacy</a></li>
+        <li><a href="key-concepts.html" aria-current="page">Key Concepts</a></li>
+        <li><a href="references.html">Resources</a></li>
+        <li><a href="about.html">About Me</a></li>
+        </ul></nav>
+    </header>
+    <main id="main-content">
+        <div class="page-heading"><p class="eyebrow">A beginner's guide to the Domain Name System</p>
+        <h1>Seven Key Concepts</h1><p class="lead">Seven DNS ideas with examples to help explain them.</p></div>
+<section class="concept"><span class="number">01</span><div><h2>The DNS hierarchy</h2><p>DNS names are organized in levels. In www.example.com, com is the top-level domain, example is below it, and www is another label. The root sits above the top-level domains.</p><p class="example"><strong>Example:</strong> Read a name from right to left to understand its place in the hierarchy.</p></div></section>
+<section class="concept"><span class="number">02</span><div><h2>Recursive and iterative lookups</h2><p>A recursive request asks the resolver to find an answer for the client. In an iterative lookup, a server may point the resolver to another server to keep looking.</p><p class="example"><strong>Example:</strong> Your device asks for an answer; the resolver follows referrals on your behalf.</p></div></section>
+<section class="concept"><span class="number">03</span><div><h2>Authority and delegation</h2><p>An authoritative server provides the official DNS records for a zone. Delegation means giving other name servers responsibility for part of the DNS naming system.</p><p class="example"><strong>Example:</strong> The .com zone delegates example.com to its designated authoritative servers.</p></div></section>
+<section class="concept"><span class="number">04</span><div><h2>Caching and TTL</h2><p>Caching temporarily stores answers. A record’s time to live (TTL), measured in seconds, controls how long it may normally be reused from cache.</p><p class="example"><strong>Example:</strong> A TTL of 300 allows caching for up to five minutes. Existing cached answers may remain after an administrator changes a record.</p></div></section>
+<section class="concept"><span class="number">05</span><div><h2>Aliases and addresses</h2><p>An alias points to another name. Address records connect a name with IPv4 or IPv6 addresses.</p><p class="example"><strong>Example:</strong> A CNAME for www.example.com can lead to example.com; an address lookup then needs the target’s A or AAAA records.</p></div></section>
+<section class="concept"><span class="number">06</span><div><h2>Negative answers</h2><p>NXDOMAIN means the queried name does not exist. A name may also exist without the requested record type. Negative answers can be cached.</p><p class="example"><strong>Example:</strong> An existing hostname might have an A record but no AAAA record; that is different from a nonexistent hostname.</p></div></section>
+<section class="concept"><span class="number">07</span><div><h2>Validation and encryption</h2><p>Validation checks DNS data. Encryption protects a communication channel. These protections can work together.</p><p class="example"><strong>Example:</strong> A resolver can use DNSSEC to validate an answer while your device uses DoH to communicate with that resolver.</p></div></section><p class="sources">Read more: <a href="references.html#rfc1034">RFC 1034</a> · <a href="references.html#rfc1035">RFC 1035</a> · <a href="references.html#rfc2308">RFC 2308</a> · <a href="references.html#rfc4033">RFC 4033</a> · <a href="references.html#icann">ICANN</a></p>
+    </main>
+    <!-- Course credit. -->
+    <footer><p>Ben Rios Lopez · Kennesaw State University · Fall 2026</p>
+    <p>An <a href="https://ksuweb.github.io/IT3203/">IT 3203 class project</a>.</p></footer>
+</body>
+</html>
