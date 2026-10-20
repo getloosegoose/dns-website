@@ -1,3 +1,0 @@
-PASS: six pages; 79 local link/asset references and fragments; balanced HTML tags; unique IDs; one h1/page; one shared stylesheet; no scripts/inline styles; image alt text; SVG XML; all pages and assets HTTP 200.
-These structural checks are not a W3C conformance validation.
-After the first-person wording update: all six pages passed official W3C Nu HTML validation with no messages. Layout unchanged; no new visual test performed.
